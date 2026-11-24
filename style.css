@@ -998,3 +998,46 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 420px) {
   #check .section-head h2 { font-size: 25px; letter-spacing: .05em; }
 }
+
+/* ---------------- 春季車美專案：四方案卡片（沿用夏季車美質感） ---------------- */
+.carcare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+.carcare-card {
+  display: flex; flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--line-gray);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.carcare-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.carcare-card .carcare-info { padding: 30px 32px 26px; flex: 1 0 auto; }
+.carcare-card .carcare-name { margin-bottom: 16px; }
+.carcare-card .carcare-items { gap: 10px; }
+.cc-bonus {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #F6EEDF;
+  color: #8A6A35;
+  font-weight: 700;
+  font-size: 14.5px;
+  letter-spacing: .04em;
+}
+.carcare-card .carcare-prices {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+  padding: 22px 32px;
+}
+.carcare-card .cc-price { flex: 1; }
+.carcare-card .cc-price + .cc-price { border-top: 0; padding-top: 0; border-left: 1px solid rgba(255,255,255,.14); padding-left: 24px; }
+.carcare-card .cc-tier { font-size: 14px; }
+.carcare-card .cc-sale strong { font-size: 28px; }
+@media (max-width: 760px) {
+  .carcare-grid { grid-template-columns: 1fr; }
+  .carcare-card .carcare-info { padding: 26px 24px 22px; }
+  .carcare-card .carcare-prices { padding: 20px 24px; }
+  .carcare-card .cc-sale strong { font-size: 24px; }
+}
